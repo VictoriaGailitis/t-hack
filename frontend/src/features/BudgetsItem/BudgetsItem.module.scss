@@ -1,0 +1,101 @@
+.budgetsItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid var(--text-color);
+  cursor: pointer;
+}
+.budgetsItemProp{
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  min-width: 100px;
+  line-height: 24px; /* 160% */
+  text-align: center;
+}
+.cancel{
+  border: none;
+  background-color: inherit;
+  background: url("../../shared/svg/close.svg");
+  width: 24px;
+  height: 24px;
+  cursor:  pointer;
+}
+.cancel {
+  background-color: transparent;
+  border: none;
+  color: #ff5c5c;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    color: #ff0000;
+  }
+}
+
+.confirmPopup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: center;
+  width: 300px;
+  border-radius: 8px;
+
+  p {
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:first-of-type {
+      background-color: #ff5c5c;
+      color: #fff;
+
+      &:hover {
+        background-color: #ff0000;
+      }
+    }
+
+    &:last-of-type {
+      background-color: #ddd;
+      color: #333;
+
+      &:hover {
+        background-color: #bbb;
+      }
+    }
+  }
+}
+.checkbox{
+  background: var(--second-bg-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 6px;
+}
+
+.checked {
+  background-color: yellow;
+  border-color: yellow;
+  transition: 0.3s;
+  position: relative;
+}
+.checked::after{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  content: url("../../shared/svg/tuiIconCheck.svg");
+}

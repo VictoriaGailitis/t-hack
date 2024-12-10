@@ -1,0 +1,22 @@
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background: var(--btn);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s; /* Плавный переход для фона и трансформации */
+}
+
+.btn:hover {
+  background: var(--btn); /* Цвет фона при наведении */
+}
+
+.btn:active {
+  background: var(--btn); /* Цвет фона при нажатии */
+  transform: scale(0.95); /* Уменьшение размера при нажатии */
+}

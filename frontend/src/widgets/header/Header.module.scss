@@ -1,0 +1,25 @@
+.header{
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-color);
+  border-bottom: 1px solid var(--newborder);
+}
+.logoDiv{
+  display: flex;
+  gap: 22px;
+  text-decoration: none;
+  align-items: center;
+}
+.img{
+  width: 60px;
+  height: 60px;
+}
+.title{
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  color: var(--text-color);
+}

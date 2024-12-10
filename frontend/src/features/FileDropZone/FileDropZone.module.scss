@@ -1,0 +1,27 @@
+.filedropzone{
+  background: var(--background-color);
+  border-radius: 10px;
+  padding: 10px 16px;
+  border: 2px dashed  #FFDD2D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.download{
+}
+.loaded{
+  max-width: 80%;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.span{
+  color: #FFDD2D;
+}

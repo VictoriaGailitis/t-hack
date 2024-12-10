@@ -1,0 +1,31 @@
+.pagination{
+  display: flex;
+  gap: 6px;
+}
+.item{
+  border: none;
+  background-color: inherit;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+.active{
+  background-color: #FFDD2D;
+  border-radius: 6px;
+}
+.arrowButton{
+  padding: 6px;
+  width: 28px;
+  height: 28px;
+  background: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--text-color);
+  background:url("../../shared/svg/arrow.svg");
+  background-position: center;
+  background-size: 24px;
+  &:last-of-type {
+    transform: rotate(180deg);
+  }
+}

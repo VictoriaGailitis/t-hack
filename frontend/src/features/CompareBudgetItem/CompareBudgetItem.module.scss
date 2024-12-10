@@ -1,0 +1,45 @@
+.compareBudgetItem{
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--text-color);
+  width: 30%;
+  flex-shrink: 0;
+}
+.title{
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 30px;
+}
+.top{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+.bot{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-bottom: 25px;
+}
+.subTitle{
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+.text{
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.item{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

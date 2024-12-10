@@ -1,0 +1,43 @@
+variables:
+  HOST: $HOST
+  CERT_PATH: $CERT_PATH
+  DB_HOST: $DB_HOST
+  DB_NAME: $DB_NAME
+  DB_USER: $DB_USER
+  DB_PASS: $DB_PASS
+  DB_PORT: $DB_PORT
+  ORIGINS: $ORIGINS
+  EMAIL: $EMAIL
+
+stages:
+  - build
+  - test
+  - deploy
+
+build-job: 
+  stage: build
+  script:
+    - echo "Building the project"
+    - docker build -t frontend:latest -f frontend/Dockerfile frontend
+  rules:
+    - when: manual
+
+
+test-job:
+  stage: test
+  script:
+    - echo "Testing the project" 
+  rules:
+    - when: manual
+
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "Running deploy"
+    - echo "HOST=${HOST}, DB_NAME=${DB_NAME}, DB_USER=${DB_USER}, DB_PASS=${DB_PASS}, DB_PORT=${DB_PORT}, CERT_PATH=${CERT_PATH}, EMAIL=${EMAIL}"
+    - docker compose stop frontend
+    - docker compose rm -f frontend
+    - docker compose up -d --build frontend
+  rules:
+    - when: manual

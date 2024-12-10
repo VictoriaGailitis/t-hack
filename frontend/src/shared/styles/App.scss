@@ -1,0 +1,104 @@
+// ОБНУЛЕНИЕ
+@use "colors.scss" as *;
+
+
+@font-face {
+  font-family: "tinkoff";
+  src: url('../fonts/tinkoffsans-medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "tinkoff";
+  src: url('../fonts/TinkoffSans-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: "tinkoff";
+  src: url('../fonts/TinkoffSans-Bold.ttf');
+  font-weight: bold;
+}
+/* Определяем CSS-переменные для светлой темы */
+:root {
+  --newsecond-bg: #FFF;
+  --newborder: #E0E0E0;
+  --background-color: #ffffff; /* FFFFFF */
+  --text-color: #333333;       /* 333333 */
+  --border-color: #888888;     /* 888888 */
+  --second-bg-color:#F5F5F5;
+  --second-text-color:#888;
+  --secondborder: #E0E0E0;
+  --thridbg: rgba(0, 0, 0, 0.04);
+  --btn:#FFDD2D;
+}
+
+/* Определяем CSS-переменные для темной темы */
+[data-theme='dark'] {
+  --background-color: #121212; /* 333333 */
+  --text-color: #dddddd;       /* DDDDDD */
+  --border-color: #555555;     /* 555555 */
+  --second-bg-color:#333333;
+  --second-text-color:#dddddd;
+  --newborder: #FFFFFF29;
+  --newsecond-bg: #FFFFFF29;
+  --secondborder: #2C2C2E;
+  --thridbg:rgba(255, 255, 255, 0.16);
+  --btn:#FFFFFF3D;
+}
+
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer, header, nav, section, main{
+  display: block;
+}
+
+body{
+  line-height: 1;
+  font-family: "tinkoff",sans-serif; // Добавление шрифта
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+ol, ul{
+  list-style: none;
+}
+
+blockquote, q{
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after{
+  content: '';
+  content: none;
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+._container{
+  max-width: 1420px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+/* styles.css */
+

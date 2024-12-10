@@ -1,0 +1,80 @@
+
+services:
+  
+  traefik:
+    image: "traefik:v3.1"
+    container_name: "traefik"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./config/traefik:/etc/traefik:ro
+      - ./certs:/etc/letsencrypt
+    restart: unless-stopped
+  
+  db:
+    container_name: "db"
+    image: "postgres:17"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    ports:
+      #Здесь возможно будет лучше поменять на "5433:${DB_PORT}", так как на сервере может быть 5432 уже быть занят другой POSTGRES
+      - "5433:${DB_PORT}" 
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - pg_project:/var/lib/postgresql/data
+    
+  backend:
+    container_name: "backend"
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_PORT=${DB_PORT}
+      - ORIGINS=${ORIGINS}
+      - S3_ACCESS_KEY_ID=${S3_ACCESS_KEY_ID}
+      - S3_SECRET_KEY=${S3_SECRET_KEY}
+    depends_on:
+      db:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.rule=Host(`${HOST}`) && PathPrefix(`/api`)"
+      - "traefik.http.services.backend.loadbalancer.server.port=80"
+      - "traefik.http.routers.backend.tls=true"
+      - "traefik.http.routers.backend.tls.certresolver=le"
+    
+  frontend:
+    container_name: "frontend"
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      - HOST=${HOST}
+      - CERT_PATH=${CERT_PATH}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.rule=Host(`${HOST}`)"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+      - "traefik.http.routers.frontend.tls=true"
+      - "traefik.http.routers.frontend.tls.certresolver=le"
+
+volumes:
+  pg_project:

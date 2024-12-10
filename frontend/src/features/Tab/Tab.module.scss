@@ -1,0 +1,40 @@
+.tabsContainer {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  position: relative; // Убедитесь, что контейнер для табов имеет относительное позиционирование
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  flex: 1;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--secondborder);
+  color: var(--text-color);
+
+}
+.active{
+  font-weight: bold;
+}
+
+.indicator {
+  position: absolute; // Измените позиционирование индикатора на абсолютное
+  bottom: 0; // Позиция индикатора снизу
+  left: 0; // Позиция индикатора слева
+  width: 50%; // Ширина индикатора равна ширине таба
+  background-color: #FFDD2D; // Цвет индикатора
+  transition: transform 0.3s ease; // Плавное перемещение индикатора
+  height: 2px;
+  border-radius: 8px;
+}

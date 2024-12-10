@@ -1,0 +1,62 @@
+.newBudgetForm{
+  padding: 20px;
+  background: var(--background-color);
+  width: 30%;
+  border: 1px solid var(--text-color);
+  border-radius: 20px;
+}
+.Formtitle{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 30px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap:25px;
+}
+.formItem{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.label{
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.input{
+  border-radius: 10px;
+  color: var(--text-color);
+  background: var(--newsecond-bg);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.10);
+  border: 1px solid var(--newborder);
+  padding: 12px 16px;
+  outline: none;
+  &::placeholder{
+    color: var(--second-text-color);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+.btns{
+  display: flex;
+}
+.btn{
+  padding: 10px;
+  border-radius: 8px;
+  background: #FFDD2D;
+  border: 1px solid #333333;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.error{
+  color: #ff0000;
+}

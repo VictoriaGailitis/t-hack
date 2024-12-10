@@ -1,0 +1,52 @@
+.budgets{
+  width: 66%;
+  padding: 20px;
+  background: var(--background-color);
+  border: 1px solid var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  border-radius: 20px;
+  position: relative;
+  min-height: 758px;
+}
+.top{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.budgetsTitle{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.pagination{
+  position: absolute;
+  bottom: 30px;
+  right: 45%;
+}
+.hidden{
+  opacity: 0;
+}
+.prop{
+  min-width: 80px;
+}
+.budgetsit{
+  border-bottom: 1px solid var(--text-color);
+  cursor: auto;
+}
+.compareLink{
+  padding: 10px 18px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 160% */
+  color: #FFF;
+  background: #FFDD2D;
+  border-radius: 12px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 24px;
+  right: 20px;
+}
