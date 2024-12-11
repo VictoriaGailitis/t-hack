@@ -61,10 +61,11 @@ API - [тык](https://timkoff.itatmisis.ru/api/docs)
 ## Фронтенд
 
 ### Стек
-
-`<img alt="React Logo" height="36" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/130px-React_Logo_SVG.svg.png" width="36"/>`
-`<img alt="Custom Logo" height="36" src="https://res.cloudinary.com/dcss55nem/image/upload/v1701032025/19_tvxcu4.png" width="60"/>`
-`<img alt="TypeScript Logo" height="36" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png" width="36"/>`
+<p float="left">
+<img alt="React Logo" height="36" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/130px-React_Logo_SVG.svg.png" width="36"/>
+<img alt="Custom Logo" height="36" src="https://res.cloudinary.com/dcss55nem/image/upload/v1701032025/19_tvxcu4.png" width="60"/>
+<img alt="TypeScript Logo" height="36" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/768px-Typescript_logo_2020.svg.png" width="36"/>
+</p>
 
 ### Архитектура
 
